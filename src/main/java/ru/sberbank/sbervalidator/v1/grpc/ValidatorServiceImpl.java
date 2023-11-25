@@ -29,8 +29,6 @@ public class ValidatorServiceImpl extends ValidatorServiceGrpc.ValidatorServiceI
                         .putAllResultOfValidation(validationResult)
                         .build());
             } catch (IllegalArgumentException e) {
-
-
                 responseBuilder.putValidationResults(fieldName, ResultOfValidation.newBuilder()
                         .putResultOfValidation(false, e.getMessage())
                         .build());
