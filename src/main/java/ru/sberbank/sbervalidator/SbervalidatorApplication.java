@@ -1,9 +1,7 @@
 package ru.sberbank.sbervalidator;
 
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ru.sberbank.sbervalidator.v1.grpc.ValidatorServiceImpl;
 
 import java.io.IOException;
 
@@ -11,12 +9,7 @@ import java.io.IOException;
 public class SbervalidatorApplication {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		Server server = ServerBuilder
-				.forPort(8080)
-				.addService(new ValidatorServiceImpl()).build();
-		server.start();
-		server.awaitTermination();
-		//SpringApplication.run(SbervalidatorApplication.class, args);
+		SpringApplication.run(SbervalidatorApplication.class, args);
 	}
 
 }
